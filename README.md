@@ -26,11 +26,11 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| name               | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| name               | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
 
 ### Association
 - has_many :items
@@ -41,20 +41,19 @@ Things you may want to cover:
 | Column                | Type       | Options     |
 | --------------------- | ---------- | ----------- |
 | name                  | string     | null: false                    |
-| image                 | string     | null: false                    |
 | introduction          | text       | null: false                    |
-| category              | string     | null: false                    |
-| condition             | string     | null: false                    |
-| delivery_charge       | string     | null: false                    |
-| shipping_source       | string     | null: false                    |
-| days                  | integer    | null: false                    |
+| category_id           | integer    | null: false                    |
+| condition_id          | integer    | null: false                    |
+| delivery_charge_id    | integer    | null: false                    |
+| shipping_source_id    | integer    | null: false                    |
+| until_id              | integer    | null: false                    |
 | price                 | integer    | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_one    :orders
+- has_one    :order
 
 ## orders テーブル
 
@@ -73,12 +72,12 @@ Things you may want to cover:
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- |------------------------------- |
-| post_code        | integer    | null: false                    |
+| post_code        | string    | null: false                    |
 | state            | string     | null: false                    |
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
 | building_name    | string     |                                |
-| phone_number     | integer    | null: false                    |
+| phone_number     | string    | null: false                    |
 | order            | references | null: false, foreign_key: true |
 
 ### Association
