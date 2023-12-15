@@ -35,7 +35,7 @@ Things you may want to cover:
 | first_name_cn      | string  | null: false               |
 | last_name_kana     | string  | null: false               |
 | first_name_kana    | string  | null: false               |
-| dob_id             | integer | null: false               |
+| dob                | data    | null: false               |
 
 ### Association
 - has_many :items
@@ -50,7 +50,7 @@ Things you may want to cover:
 | category_id           | integer    | null: false                    |
 | condition_id          | integer    | null: false                    |
 | delivery_charge_id    | integer    | null: false                    |
-| shipping_source_id    | integer    | null: false                    |
+| state                 | integer    | null: false                    |
 | until_id              | integer    | null: false                    |
 | price                 | integer    | null: false                    |
 | user                  | references | null: false, foreign_key: true |
@@ -77,12 +77,12 @@ Things you may want to cover:
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- |------------------------------- |
-| post_code        | string    | null: false                    |
-| state            | string     | null: false                    |
+| post_code        | string     | null: false                    |
+| state            | integer    | null: false                    |
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
 | building_name    | string     |                                |
-| phone_number     | string    | null: false                    |
+| phone_number     | string     | null: false                    |
 | order            | references | null: false, foreign_key: true |
 
 ### Association
