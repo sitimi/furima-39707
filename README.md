@@ -50,7 +50,7 @@ Things you may want to cover:
 | category_id           | integer    | null: false                    |
 | condition_id          | integer    | null: false                    |
 | delivery_charge_id    | integer    | null: false                    |
-| state                 | integer    | null: false                    |
+| region_id             | integer    | null: false                    |
 | until_id              | integer    | null: false                    |
 | price                 | integer    | null: false                    |
 | user                  | references | null: false, foreign_key: true |
@@ -78,7 +78,7 @@ Things you may want to cover:
 | Column           | Type       | Options                        |
 | ---------------- | ---------- |------------------------------- |
 | post_code        | string     | null: false                    |
-| state            | integer    | null: false                    |
+| region_id        | integer    | null: false                    |
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
 | building_name    | string     |                                |
