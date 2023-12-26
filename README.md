@@ -35,7 +35,7 @@ Things you may want to cover:
 | first_name_cn      | string  | null: false               |
 | last_name_kana     | string  | null: false               |
 | first_name_kana    | string  | null: false               |
-| dob                | data    | null: false               |
+| dob                | date    | null: false               |
 
 ### Association
 - has_many :items
