@@ -28,22 +28,22 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Introduction can't be blank")
       end
       it "categoryが空では出品できない" do
-        @item.category_id = ''
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it "conditionが空では出品できない" do
-        @item.condition_id = ''
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it "regionが空では出品できない" do
-        @item.region_id = ''
+        @item.region_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Region can't be blank")
       end
       it "delivery_daysが空では出品できない" do
-        @item.delivery_days_id = ''
+        @item.delivery_days_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery days can't be blank")
       end
