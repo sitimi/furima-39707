@@ -12,7 +12,7 @@ class Item < ApplicationRecord
   validates :image, presence: true, blob: { content_type: :image }
   validates :name, :introduction, presence: true
   validates :category_id, :condition_id, :delivery_charge_id, :region_id, :delivery_days_id, numericality: { other_than: 1 , message: "can't be blank"} 
-  validates :price, numericality: { in: 300..9999999 }, format: { with: /\A[0-9]+\z/ }, presence: true
+  validates :price, numericality: {only_integer: true, in: 300..9999999 }, presence: true
 
 
 end
