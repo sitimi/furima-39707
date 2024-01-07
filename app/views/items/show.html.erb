@@ -26,7 +26,6 @@
     <% if user_signed_in? %> 
     <%# 購入機能実装後条件を下のifに追加すること %>
       <% if current_user.id == @item.user_id %> 
-      <%# 商品詳細実装後リンク設定 %>
         <%= link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
         <%# 商品削除機能実装後リンク設定 %>
