@@ -31,12 +31,12 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    if item.valid?
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    if @item.valid?
       redirect_to item_path(item_params)
     else
-      render 'edit', status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
