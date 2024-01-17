@@ -1,15 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe OrderAddress, type: :model do
-
- 
   describe '配送先情報の保存' do
-
     before do
       user = FactoryBot.create(:user)
       @order_address = FactoryBot.build(:order_address, user_id: user.id)
     end
-  
+
     context '配送先情報の保存ができるとき' do
       it 'すべての値が正しく入力されていれば保存できる' do
         expect(@order_address).to be_valid
@@ -62,10 +59,11 @@ RSpec.describe OrderAddress, type: :model do
       it '郵便番号が空だと保存できないこと' do
         @order_address.post_code = nil
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Post code can't be blank", 'Post code is invalid. Include hyphen(-)')
+        expect(@order_address.errors.full_messages).to include("Post code can't be blank",
+                                                               'Post code is invalid. Include hyphen(-)')
       end
       it '郵便番号にハイフンがないと保存できないこと' do
-        @order_address.post_code = 1234567
+        @order_address.post_code = 1_234_567
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
@@ -104,7 +102,7 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Phone number is invalid')
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order_address.token = nil
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
