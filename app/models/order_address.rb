@@ -8,9 +8,9 @@ class OrderAddress
     validates :user_id
     validates :city
     validates :street
-    validates :region_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
-    validates :phone_number, format: { with: /\A[0-9]{10,11}\z/, message: 'is invalid' }
+    validates :region_id, numericality: { other_than: 0, message: "を入力してください" }
+    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'は無効です。ハイフン(-)を含めて入力してください' }
+    validates :phone_number, format: { with: /\A[0-9]{10,11}\z/, message: 'は無効です' }
   end
 
   def save
