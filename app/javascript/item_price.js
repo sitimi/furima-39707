@@ -1,4 +1,4 @@
-window.addEventListener('turbo:load', () => {
+const item = () =>  {
   const priceInput = document.getElementById("item-price");
   priceInput.addEventListener("input", () => {
   const inputValue = priceInput.value;
@@ -9,4 +9,7 @@ window.addEventListener('turbo:load', () => {
   // 出品価格から販売手数料を引く処理
   ProfitDom.innerHTML = inputValue - addTaxDom.innerHTML;
   })
-});
+};
+
+window.addEventListener("turbo:load", item);
+window.addEventListener("turbo:render", item);
